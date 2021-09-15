@@ -15,6 +15,8 @@ USER_NAME=<mail_server_user_name>
 PASS=<mail_server_user_password>
 ```
 
+NOTE if port_number is different than 3000 then should modify Dockerfile to match with the new value
+
 run in terminal (or similar)
 
 ```bash
@@ -49,6 +51,12 @@ should receive next 200 status response with body
 {
   "message": "Mail sended"
 }
+```
+
+In console (where your container output is displayed) we should see
+
+```bash
+web_1  | Message sent: <<ID>@<domain>>
 ```
 
 Email should be received in the mail set in "to" field in POST request
